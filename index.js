@@ -4,6 +4,7 @@ const app = express();
 const cors = require('cors');
 
 app.use(cors());
+console.log("Stripe key present:", !!process.env.STRIPE_SECRET_KEY);
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 app.get('/pay', async (req, res) => {
