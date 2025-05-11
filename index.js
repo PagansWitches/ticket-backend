@@ -45,4 +45,5 @@ app.get('/pay', async (req, res) => {
   res.redirect(303, session.url);
 });
 
-app.listen(3000, () => console.log("Ticket server running on port 3000"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Ticket server running on port ${PORT}`));
